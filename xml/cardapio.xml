@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cardapio>
+    <prato id="P01">
+        <nome>Brigadeiro</nome>
+        <descrição>Bolinha de chocolate</descrição>
+        <ingredientes>Leite coondensado, chocolate, manteiga</ingredientes>
+        <preço>2,50 reais</preço>
+        <calorias>213 kcal</calorias>
+        <tempoDePreparo>15m</tempoDePreparo>
+    </prato>
+    
+    <prato id="P02">
+        <nome>Batata Frita</nome>
+        <descrição>Batata crocante saborosa</descrição>
+        <ingredientes>Batata, óleo</ingredientes>
+        <preço>10,00 reais</preço>
+        <calorias>500 kcal</calorias>
+        <tempoDePreparo>15m</tempoDePreparo>
+    </prato>
+    
+    <prato id="P03">
+        <nome>X-Tudo</nome>
+        <descrição>Hambúrger com tudo de bom</descrição>
+        <ingredientes>Pão de hambúrguer, hambúrguer de carne bovina, presunto, queijo, ovo frito, alface, tomate, milho verde, ervilha, batata palha, maionese, ketchup, mostarda, catupiry</ingredientes>
+        <preço>12,00 reais</preço>
+        <calorias>970 kcal</calorias>
+        <tempoDePreparo>20m</tempoDePreparo>
+    </prato>
+
+    <prato id="P04">
+        <nome>Strogonoff de Frango</nome>
+        <descrição>Delicioso creme de frango</descrição>
+        <ingredientes>Peito de frango cortado em cubos (cerca de 150g), cebola picada (1 unidade média), alho picado (2 dentes), champignon em conserva (50g), molho de tomate (2 colheres de sopa), creme de leite (3 colheres de sopa), mostarda (1 colher de sopa), ketchup (1 colher de sopa), sal e pimenta a gosto, óleo para refogar (1 colher de sopa)</ingredientes>
+        <preço>15,00 reais</preço>
+        <calorias>780 kcal</calorias>
+        <tempoDePreparo>40m</tempoDePreparo>
+    </prato>
+
+    <prato id="P05">
+        <nome>Marmita</nome>
+        <descrição>Marmita saudável para boa refeição</descrição>
+        <ingredientes>Filé de frango grelhado, arroz integral, vegetais assados ou cozidos no vapor, salada verde, feijão preto, frutas frescas, nozes ou castanhas.</ingredientes>
+        <preço>20,00 reais</preço>
+        <calorias>585 kcal</calorias>
+        <tempoDePreparo>30m</tempoDePreparo>
+    </prato>
+</cardapio>
