@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE imobiliaria [
+    <!ELEMENT imobiliaria (imovel+)>
+    <!ELEMENT imovel (descricao, proprietario, endereco, caracteristicas, valor)>
+    <!ELEMENT descricao (#PCDATA)>
+    <!ELEMENT proprietario (nome, (email | telefone)+)>
+    <!ELEMENT nome (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT telefone (#PCDATA)>
+    <!ELEMENT endereco (rua, bairro, cidade, numero?)>
+    <!ELEMENT rua (#PCDATA)>
+    <!ELEMENT bairro (#PCDATA)>
+    <!ELEMENT cidade (#PCDATA)>
+    <!ELEMENT numero (#PCDATA)>
+    <!ELEMENT caracteristicas (tamanho, numQuartos, numBanheiros)>
+    <!ELEMENT tamanho (#PCDATA)>
+    <!ELEMENT numQuartos (#PCDATA)>
+    <!ELEMENT numBanheiros (#PCDATA)>
+    <!ELEMENT valor (#PCDATA)>
+]>
+<imobiliaria>
+    <imovel>
+        <descricao>Casa com piscina e churrasqueira</descricao>
+        <proprietario>
+            <nome>Joaquim Silva</nome>
+            <email>joaquimsilva@gmail.com</email>
+            <telefone>123456789</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua das Acácias</rua>
+            <bairro>Jardim Europa</bairro>
+            <cidade>São Paulo</cidade>
+            <numero>100</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>300 m²</tamanho>
+            <numQuartos>4</numQuartos>
+            <numBanheiros>3</numBanheiros>
+        </caracteristicas>
+        <valor>850000</valor>
+    </imovel>
+    
+    <imovel>
+        <descricao>Casa moderna</descricao>
+        <proprietario>
+            <nome>Ana Carolina Oliveira</nome>
+            <telefone>987654321</telefone>
+            <telefone>999888777</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua dos Hibiscos</rua>
+            <bairro>Boa Viagem</bairro>
+            <cidade>Recife</cidade>
+            <numero>200</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>180 m²</tamanho>
+            <numQuartos>3</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>1200000</valor>
+    </imovel>
+    
+    <imovel>
+        <descricao>Terreno baldio</descricao>
+        <proprietario>
+            <nome>Marcos Antônio Ferreira</nome>
+            <telefone>111222333</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua das Flores</rua>
+            <bairro>Centro</bairro>
+            <cidade>Fortaleza</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>500 m²</tamanho>
+            <numQuartos>0</numQuartos>
+            <numBanheiros>0</numBanheiros>
+        </caracteristicas>
+        <valor>400000</valor>
+    </imovel>
+    
+    <imovel>
+        <descricao>Sala comercial</descricao>
+        <proprietario>
+            <nome>Lúcia Mendes</nome>
+            <telefone>333444555</telefone>
+            <email>lucia.mendes@gmail.com</email>
+        </proprietario>
+        <endereco>
+            <rua>Avenida das Palmeiras</rua>
+            <bairro>Centro Empresarial</bairro>
+            <cidade>Rio de Janeiro</cidade>
+            <numero>15</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>80 m²</tamanho>
+            <numQuartos>0</numQuartos>
+            <numBanheiros>1</numBanheiros>
+        </caracteristicas>
+        <valor>600000</valor>
+    </imovel>
+    
+    <imovel>
+        <descricao>Casa térrea com área de lazer</descricao>
+        <proprietario>
+            <nome>Sílvio Souza</nome>
+            <telefone>555666777</telefone>
+            <email>silvio.souza@gmail.com</email>
+        </proprietario>
+        <endereco>
+            <rua>Alameda das Oliveiras</rua>
+            <bairro>Parque das Flores</bairro>
+            <cidade>Curitiba</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>250 m²</tamanho>
+            <numQuartos>3</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>550000</valor>
+    </imovel>
+    
+    <imovel>
+        <descricao>Apartamento próximo à universidade e ao metrô</descricao>
+        <proprietario>
+            <nome>Maria Aparecida</nome>
+            <telefone>777888999</telefone>
+            <email>maria.aparecida@gmail.com</email>
+        </proprietario>
+        <endereco>
+            <rua>Rua das Palmeiras</rua>
+            <bairro>Jardim Universitário</bairro>
+            <cidade>São Paulo</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>120 m²</tamanho>
+            <numQuartos>2</numQuartos>
+            <numBanheiros>1</numBanheiros>
+        </caracteristicas>
+        <valor>320000</valor>
+    </imovel>
+</imobiliaria>
