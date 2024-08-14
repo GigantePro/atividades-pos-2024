@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quiz SYSTEM "quiz.dtd">
+
+<quiz>
+    <questao>
+        <pergunta>Qual é o símbolo químico do ouro?</pergunta>
+        <alternativa correta="nao">Ag</alternativa>
+        <alternativa correta="sim">Au</alternativa>
+        <alternativa correta="nao">Pb</alternativa>
+        <alternativa correta="nao">Fe</alternativa>
+    </questao>
+    <questao>
+        <pergunta>Quem pintou a Mona Lisa?</pergunta>
+        <alternativa correta="sim">Leonardo da Vinci</alternativa>
+        <alternativa correta="nao">Vincent van Gogh</alternativa>
+        <alternativa correta="nao">Pablo Picasso</alternativa>
+        <alternativa correta="nao">Claude Monet</alternativa>
+    </questao>
+    <questao>
+        <pergunta>Qual é o maior oceano do planeta?</pergunta>
+        <alternativa correta="nao">Oceano Atlântico</alternativa>
+        <alternativa correta="nao">Oceano Índico</alternativa>
+        <alternativa correta="sim">Oceano Pacífico</alternativa>
+        <alternativa correta="nao">Oceano Ártico</alternativa>
+    </questao>
+    <questao>
+        <pergunta>Quem foi o primeiro homem a pisar na Lua?</pergunta>
+        <alternativa correta="sim">Neil Armstrong</alternativa>
+        <alternativa correta="nao">Buzz Aldrin</alternativa>
+        <alternativa correta="nao">Yuri Gagarin</alternativa>
+        <alternativa correta="nao">Michael Collins</alternativa>
+    </questao>
+    <questao>
+        <pergunta>Qual é o autor da obra '1984'?</pergunta>
+        <alternativa correta="nao">Aldous Huxley</alternativa>
+        <alternativa correta="nao">Ray Bradbury</alternativa>
+        <alternativa correta="sim">George Orwell</alternativa>
+        <alternativa correta="nao">Huxley Aldous</alternativa>
+    </questao>
+</quiz>

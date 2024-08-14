@@ -1,0 +1,5 @@
+<!ELEMENT quiz (questao+)>
+<!ELEMENT questao (pergunta, alternativa+)>
+<!ELEMENT pergunta (#PCDATA)>
+<!ELEMENT alternativa (#PCDATA)>
+<!ATTLIST alternativa correta (sim | nao) "nao">

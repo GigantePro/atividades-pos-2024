@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE cardapio SYSTEM "definicoes.dtd">
+<cardapio>
+    <prato id="P01">
+        <nome>Brigadeiro</nome>
+        <descricao>Bolinha de chocolate</descricao>
+        <ingredientes>
+            <ingrediente>Leite condensado</ingrediente>
+            <ingrediente>Chocolate</ingrediente>
+            <ingrediente>Manteiga</ingrediente>
+        </ingredientes>
+        <preco moeda="BRL">2,50 &reais;</preco>
+        <calorias>213 kcal</calorias>
+        <tempoDePreparo>15m</tempoDePreparo>
+    </prato>
+    
+    <prato id="P02">
+        <nome>Batata Frita</nome>
+        <descricao>Batata crocante saborosa</descricao>
+        <ingredientes>
+            <ingrediente>Batata</ingrediente>
+            <ingrediente>Óleo</ingrediente>
+        </ingredientes>
+        <preco moeda="BRL">10,00 &reais;</preco>
+        <calorias>500 kcal</calorias>
+        <tempoDePreparo>15m</tempoDePreparo>
+    </prato>
+    
+    <prato id="P03">
+        <nome>X-Tudo</nome>
+        <descricao>Hambúrguer com tudo de bom</descricao>
+        <ingredientes>
+            <ingrediente>Pão de hambúrguer</ingrediente>
+            <ingrediente>Hambúrguer de carne bovina</ingrediente>
+            <ingrediente>Presunto</ingrediente>
+            <ingrediente>Queijo</ingrediente>
+            <ingrediente>Ovo frito</ingrediente>
+            <ingrediente>Alface</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Milho verde</ingrediente>
+            <ingrediente>Ervilha</ingrediente>
+            <ingrediente>Batata palha</ingrediente>
+            <ingrediente>Maionese</ingrediente>
+            <ingrediente>Ketchup</ingrediente>
+            <ingrediente>Mostarda</ingrediente>
+            <ingrediente>Catupiry</ingrediente>
+        </ingredientes>
+        <preco moeda="BRL">12,00 &reais;</preco>
+        <calorias>970 kcal</calorias>
+        <tempoDePreparo>20m</tempoDePreparo>
+    </prato>
+
+    <prato id="P04">
+        <nome>Strogonoff de Frango</nome>
+        <descricao>Delicioso creme de frango</descricao>
+        <ingredientes>
+            <ingrediente>Peito de frango cortado em cubos (cerca de 150g)</ingrediente>
+            <ingrediente>Cebola picada (1 unidade média)</ingrediente>
+            <ingrediente>Alho picado (2 dentes)</ingrediente>
+            <ingrediente>Champignon em conserva (50g)</ingrediente>
+            <ingrediente>Molho de tomate (2 colheres de sopa)</ingrediente>
+            <ingrediente>Creme de leite (3 colheres de sopa)</ingrediente>
+            <ingrediente>Mostarda (1 colher de sopa)</ingrediente>
+            <ingrediente>Ketchup (1 colher de sopa)</ingrediente>
+            <ingrediente>Sal e pimenta a gosto</ingrediente>
+            <ingrediente>Óleo para refogar (1 colher de sopa)</ingrediente>
+        </ingredientes>
+        <preco moeda="BRL">15,00 &reais;</preco>
+        <calorias>780 kcal</calorias>
+        <tempoDePreparo>40m</tempoDePreparo>
+    </prato>
+
+    <prato id="P05">
+        <nome>Marmita</nome>
+        <descricao>Marmita saudável para boa refeição</descricao>
+        <ingredientes>
+            <ingrediente>Filé de frango grelhado</ingrediente>
+            <ingrediente>Arroz integral</ingrediente>
+            <ingrediente>Vegetais assados ou cozidos no vapor</ingrediente>
+            <ingrediente>Salada verde</ingrediente>
+            <ingrediente>Feijão preto</ingrediente>
+            <ingrediente>Frutas frescas</ingrediente>
+            <ingrediente>Nozes ou castanhas</ingrediente>
+        </ingredientes>
+        <preco moeda="BRL">20,00 &reais;</preco>
+        <calorias>585 kcal</calorias>
+        <tempoDePreparo>30m</tempoDePreparo>
+    </prato>
+</cardapio>
