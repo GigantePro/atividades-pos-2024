@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Pokémon</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .search-container {
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+        .search-container input {
+            padding: 15px;
+            font-size: 18px;
+            width: 300px;
+            border: 2px solid #ff6347;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            outline: none;
+            transition: border 0.3s;
+        }
+        .search-container input:focus {
+            border-color: #ff4500;
+        }
+        .pokemon-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+        }
+        .pokemon {
+            background-color: white;
+            border: 2px solid #ff6347;
+            border-radius: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pokemon img {
+            width: 120px;
+            height: 120px;
+        }
+        .pokemon:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .details {
+            margin-top: 10px;
+            font-size: 0.9em;
+            background-color: #ffe4e1;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: left;
+        }
+        footer {
+            margin-top: auto;
+            background-color: #ff6347;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explorador de Pokémon</h1>
+    </header>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquise Pokémon por nome ou ID..." oninput="searchPokemon()">
+    </div>
+    <div id="pokemon-list" class="pokemon-list">
+        <p class="loading">Carregando Pokémon...</p>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'https://pokeapi.co/api/v2';
+        let allPokemon = [];
+        async function fetchPokemonList() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/pokemon?limit=1000`);
+                const data = await response.json();
+                allPokemon = data.results.map((pokemon, index) => ({
+                    name: translatePokemonName(pokemon.name),
+                    id: index + 1,
+                    url: pokemon.url,
+                    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+                }));
+                displayPokemonList(allPokemon);
+            } catch (error) {
+                console.error('Erro ao buscar a lista de Pokémon:', error);
+                document.getElementById('pokemon-list').innerHTML = '<p>Erro ao carregar a lista de Pokémon.</p>';
+            }
+        }
+
+        function displayPokemonList(pokemonList) {
+            const pokemonContainer = document.getElementById('pokemon-list');
+            pokemonContainer.innerHTML = '';
+
+            pokemonList.forEach(pokemon => {
+                const pokemonDiv = document.createElement('div');
+                pokemonDiv.classList.add('pokemon');
+
+                const pokemonImage = document.createElement('img');
+                pokemonImage.src = pokemon.image;
+                pokemonImage.alt = pokemon.name;
+
+                const pokemonName = document.createElement('div');
+                pokemonName.textContent = `${pokemon.id} - ${pokemon.name}`;
+
+                pokemonDiv.appendChild(pokemonImage);
+                pokemonDiv.appendChild(pokemonName);
+                pokemonDiv.addEventListener('click', () => fetchPokemonDetails(pokemon.url, pokemonDiv));
+                pokemonContainer.appendChild(pokemonDiv);
+            });
+        }
+
+        async function fetchPokemonDetails(url, pokemonDiv) {
+            try {
+                const response = await fetch(url);
+                const pokemon = await response.json();
+
+                let detailsDiv = pokemonDiv.querySelector('.details');
+                if (!detailsDiv) {
+                    detailsDiv = document.createElement('div');
+                    detailsDiv.classList.add('details');
+                    pokemonDiv.appendChild(detailsDiv);
+                }
+
+                if (detailsDiv.innerHTML) {
+                    detailsDiv.innerHTML = '';
+                    return;
+                }
+
+                detailsDiv.innerHTML = `
+                    <p><strong>Altura:</strong> ${pokemon.height}</p>
+                    <p><strong>Peso:</strong> ${pokemon.weight}</p>
+                    <p><strong>Habilidades:</strong> ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
+                `;
+            } catch (error) {
+                console.error('Erro ao buscar os detalhes do Pokémon:', error);
+                pokemonDiv.innerHTML += '<p>Erro ao carregar os detalhes.</p>';
+            }
+        }
+
+        function searchPokemon() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const filteredPokemon = allPokemon.filter(pokemon => 
+                pokemon.name.toLowerCase().includes(query) || pokemon.id.toString() === query
+            );
+            displayPokemonList(filteredPokemon);
+        }
+
+        function translatePokemonName(name) {
+            const translations = {
+                bulbasaur: 'Bulbassauro',
+                ivysaur: 'Ivysauro',
+                venusaur: 'Venussauro',
+                charmander: 'Charmander',
+                charmeleon: 'Charmeleão',
+                charizard: 'Charizard',
+                squirtle: 'Squirtle',
+                wartortle: 'Wartortle',
+                blastoise: 'Blastoise'
+            };
+            return translations[name] || name;
+        }
+
+        fetchPokemonList();
+    </script>
+</body>
+</html>
